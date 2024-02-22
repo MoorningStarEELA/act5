@@ -18,11 +18,11 @@ def divVncer(lista, page):
         total = smnIzq + suma_derecha
         page.add(ft.Text(f"Total parcial: {total}"))
         return total
-
+#para crear  GUI
 def main(page):
-    def btn_click(e):
+    def btn_click(e):#funcion para ingresar la cadena junto con el boton de sumar
         if not txt_cadena.value:
-            txt_cadena.error_text = "Ingrese los números separados por espacios"
+            txt_cadena.error_text = "Ingrese los números separados por espacios" # si no ingresa los datos, te pedira que los ingreses de nuevo
             page.update()
         else:
             nms = txt_cadena.value.split()
@@ -33,6 +33,6 @@ def main(page):
             page.add(ft.Text(f"La suma de los elementos de la lista es: {resultado}"))
 
     txt_cadena = ft.TextField(label="Ingrese los números separados por espacios")
-    page.add(txt_cadena, ft.ElevatedButton("Sumar", on_click=btn_click))
+    page.add(txt_cadena, ft.ElevatedButton("Sumar", on_click=btn_click))#boton que realiza la accion de sumar
 
 ft.app(target=main)
